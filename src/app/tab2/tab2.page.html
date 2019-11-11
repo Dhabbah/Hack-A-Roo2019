@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Services
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <img src="/assets/img/umkc1.jpg" alt="" />
+  </ion-card>
+  <ion-content no-padding no-margin>
+    <div class="grid">
+      <div class='grid-cell responsive' *ngFor="let image of items">
+        <a href="{{image.url}}">
+          <button class="square square-100" [ngStyle]="{'background-image': 'url(' + image.img_url + ')'}" routerLink="{{image.url}}">
+            <div class="title">
+              {{image.name}}
+            </div>
+          </button>
+        </a>
+      </div>
+    </div>
+
+  </ion-content>
+
+
+</ion-content>

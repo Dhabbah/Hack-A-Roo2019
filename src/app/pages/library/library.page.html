@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Library</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="cards-bg social-cards">
+  <!-- Input with placeholder -->
+  <ion-item>
+    <ion-input placeholder="Enter Input" [(ngModel)]="bookTitle" ></ion-input>
+    <ion-button fill="solid" expand="block" color="dark" (click)="whenSearch()">Search</ion-button>
+  </ion-item>
+
+  <ion-card *ngFor="let books of bookList">
+    <ion-item>
+      <ion-avatar item-start>
+        <!--        <img src="{{news.image}}">-->
+      </ion-avatar>
+      <h2>{{ books.title }}</h2>
+    </ion-item>
+
+    <img src="{{books.url}}">
+
+    <ion-card-content [innerHTML]="books.description">
+      <!--      {{ news.content }}-->
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <h2>{{ books.author }}</h2>
+        </button>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+</ion-content>
+
+<style>
+  .social-cards ion-col {
+    padding: 0;
+  }
+</style>
+

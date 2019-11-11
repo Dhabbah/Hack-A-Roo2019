@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>
+      News
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="cards-bg social-cards">
+  <ion-card *ngFor="let news of newsList">
+    <ion-item>
+      <ion-avatar item-start>
+<!--        <img src="{{news.image}}">-->
+      </ion-avatar>
+      <h2>{{ news.title }}</h2>
+      <p>{{ news.pubDate }}</p>
+    </ion-item>
+
+    <img src="{{news.image}}">
+
+    <ion-card-content [innerHTML]="news.content">
+<!--      {{ news.content }}-->
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='thumbs-up'></ion-icon>
+          0 Likes
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='text'></ion-icon>
+          0 Comments
+        </button>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-content>
+
+<style>
+  .social-cards ion-col {
+    padding: 0;
+  }
+</style>

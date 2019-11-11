@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>academics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content no-padding no-margin>
+  <div class="grid">
+    <div class='grid-cell responsive' *ngFor="let image of items">
+      <a href="{{image.url}}">
+      <button class="square square-100" [ngStyle]="{'background-image': 'url(' + image.img_url + ')'}">
+        <div class="title">
+          {{image.name}}
+        </div>
+      </button>
+      </a>
+    </div>
+  </div>
+
+</ion-content>
+
+
